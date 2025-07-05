@@ -1,3 +1,12 @@
 .card-holder {
     padding: 8px 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-holder img{
+    max-height: 200px;
+    max-width: 200px;
 }
