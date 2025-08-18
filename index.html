@@ -1,55 +1,489 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Image Gallery Timeline</title>
-    <link rel="stylesheet" href="index.css">
-    <script src="https://cdn.tailwindcss.com"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timeline Gallery</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Crimson+Text:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
 </head>
-<body class="bg-gray-100">
-    <div class="max-w-4xl mx-auto p-6"> 
-        <h1 class="text-3xl font-bold mb-8 text-center">Image Gallery Timeline</h1>
-        <div class="relative border-l-4 border-blue-600 ml-4">
+<body>
+    <div class="container">
+        <header>
+            <h1>Scrollback</h1>
+            <p class="subtitle">Memories in a Single Scroll</p>
+        </header>
 
-            <!-- Timeline item 1 -->
-            <div class="mb-10 ml-6">
-                <div class = "card-holder">
-                    <img src="Images/HS_Jaz.jpg" alt="Sample Image 1" class="rounded-lg shadow-lg w-full">
-                    <div class="card-title">
-                        <h3 class="text-xl font-semibold mb-2">June 26 2015</h3>
-                        <p class="mt-2 text-gray-600">Oldest pic mo saken pero di ako kasama nung naganap to.</p>
+        <div class="timeline">
+
+            <div class="timeline-item right">
+                <div class="timeline-marker"></div>
+                <div class="timeline-content">
+                    <div class="image-container">
+                        <img src="https://images.unsplash.com/photo-1502736457022-3ad4b43e9312?w=600&h=400&fit=crop" alt="First Date" loading="lazy">
+                    </div>
+                    <div class="text-content">
+                        <h3>
+                            Where It All Began… <br>
+                            Again
+                        </h3>
+                        <span class="date">June 2025</span>
+                        <p>Nag simula sa isang tanong na "Saan ka sa Las pinas? hahaha" <br>
+                           Hanggang sa nag tuloy tuloy na tayo sa pag uusap.
+                        </p>
                     </div>
                 </div>
             </div>
 
-            <!-- Timeline item 2 -->
-             <div class="mb-10 ml-6">
-                <div class = "card-holder">
-                    <img src="Images/SHS_Jaz.jpg" alt="Sample Image 1" class="rounded-lg shadow-lg w-full">
-                    <div class="card-title">
-                        <h3 class="text-xl font-semibold mb-2">October 22 2018</h3>
-                        <p class="mt-2 text-gray-600">Isang Goodmorning picture na sinend mo saken.</p>
+            <div class="timeline-item left">
+                <div class="timeline-marker"></div>
+                <div class="timeline-content">
+                    <div class="image-container">
+                        <img src="Images/First_Meet.jpg" alt="Winter Warmth" loading="lazy">
+                    </div>
+                    <div class="text-content">
+                        <h3>First Meet</h3>
+                        <span class="date">June 2025</span>
+                        <p>After ilang years without connection. Eto yung time na mag kikita tayo ulet after ilang days of talking? haha. Sobrang kaba ko nung time na to kala ko 
+                        mag aaya ka tapos di ka pupunta hahaha.</p>
                     </div>
                 </div>
             </div>
 
-            <!-- Timeline item 3 -->
-            <div class="mb-10 ml-6">
-                <div class="absolute w-4 h-4 bg-blue-600 rounded-full mt-2 -left-2"></div>
-                <h3 class="text-xl font-semibold mb-2">June 2025</h3>
-                <img src="https://placekitten.com/602/402" alt="Sample Image 3" class="rounded-lg shadow-lg w-full">
-                <p class="mt-2 text-gray-600">Mid-year vibes with more kittens.</p>
+            <div class="timeline-item right multi-image-item">
+                <div class="timeline-marker"></div>
+                <div class="timeline-content">
+                    <div class="multi-image-container" onclick="openGallery(1)">
+                        <div class="main-image">
+                            <img src="https://images.unsplash.com/photo-1502736457022-3ad4b43e9312?w=600&h=400&fit=crop" alt="First Interaction" loading="lazy">
+                        </div>
+                        <div class="image-grid">
+                            <img src="https://images.unsplash.com/photo-1518199266791-5375a83190b7?w=200&h=150&fit=crop" alt="Chat screenshot" loading="lazy">
+                            <img src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?w=200&h=150&fit=crop" alt="Las Pinas location" loading="lazy">
+                        </div>
+                        <div class="image-overlay">
+                            <span class="image-count">+2 more photos</span>
+                        </div>
+                    </div>
+                    <div class="text-content">
+                        <h3>First Coffee Date</h3>
+                        <span class="date">June 2025</span>
+                        <p>First ride naten to tapos sa Silang agad. Nag hanap ng Kape. Kapeling sa buhay ang binigay </p>
+                    </div>
+                </div>
             </div>
 
-            <!-- Timeline item 4 -->
-            <div class="mb-10 ml-6">
-                <div class="absolute w-4 h-4 bg-blue-600 rounded-full mt-2 -left-2"></div>
-                <h3 class="text-xl font-semibold mb-2">July 2025</h3>
-                <img src="https://placekitten.com/603/403" alt="Sample Image 4" class="rounded-lg shadow-lg w-full">
-                <p class="mt-2 text-gray-600">Latest update on the timeline, still adorable.</p>
+            <div class="timeline-item left">
+                <div class="timeline-marker"></div>
+                <div class="timeline-content">
+                    <div class="image-container">
+                        <img src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?w=600&h=400&fit=crop" alt="Winter Warmth" loading="lazy">
+                    </div>
+                    <div class="text-content">
+                        <h3>First Feast</h3>
+                        <span class="date">June 2023</span>
+                        <p>Our First Feast Together<br>
+                           Mini museum sa kalyehon, pero masterpiece yung katabi ko.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item right">
+                <div class="timeline-marker"></div>
+                <div class="timeline-content">
+                    <div class="image-container">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=400&fit=crop" alt="Autumn Walks" loading="lazy">
+                    </div>
+                    <div class="text-content">
+                        <h3>First WFH with you</h3>
+                        <span class="date">July 2025</span>
+                        <p>Friday is WFH. Kaya i spend the day with my Tahanan. Luntian 10/10 yung food 10/10 yung place 100% balik tayo haha</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item left">
+                <div class="timeline-marker"></div>
+                <div class="timeline-content">
+                    <div class="image-container">
+                        <img src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?w=600&h=400&fit=crop" alt="Winter Warmth" loading="lazy">
+                    </div>
+                    <div class="text-content">
+                        <h3>Takipsilim</h3>
+                        <span class="date">July 2025</span>
+                        <p>Different Place, Same Vibes, Same Person pero malangaw yung place hahaha.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item right">
+                <div class="timeline-marker"></div>
+                <div class="timeline-content">
+                    <div class="image-container">
+                        <img src="https://images.unsplash.com/photo-1469371670807-013ccf25f16a?w=600&h=400&fit=crop" alt="Spring Renewal" loading="lazy">
+                    </div>
+                    <div class="text-content">
+                        <h3>Binondo Date</h3>
+                        <span class="date">March 2024</span>
+                        <p>As flowers bloomed again, so did our love. A year of memories behind us, and a lifetime of possibilities ahead.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item left">
+                <div class="timeline-marker"></div>
+                <div class="timeline-content">
+                    <div class="image-container">
+                        <img src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?w=600&h=400&fit=crop" alt="Winter Warmth" loading="lazy">
+                    </div>
+                    <div class="text-content">
+                        <h3>Tagaytay Trip</h3>
+                        <span class="date">July 2025</span>
+                        <p>Cozy evenings by the fireplace, sharing stories and dreams. The cold outside only made our hearts grow warmer for each other.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item right">
+                <div class="timeline-marker"></div>
+                <div class="timeline-content">
+                    <div class="image-container">
+                        <img src="https://images.unsplash.com/photo-1469371670807-013ccf25f16a?w=600&h=400&fit=crop" alt="Spring Renewal" loading="lazy">
+                    </div>
+                    <div class="text-content">
+                        <h3>Cafe 10-23</h3>
+                        <span class="date">July 2024</span>
+                        <p>As flowers bloomed again, so did our love. A year of memories behind us, and a lifetime of possibilities ahead.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item left">
+                <div class="timeline-marker"></div>
+                <div class="timeline-content">
+                    <div class="image-container">
+                        <img src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?w=600&h=400&fit=crop" alt="Winter Warmth" loading="lazy">
+                    </div>
+                    <div class="text-content">
+                        <h3>Wok It Out</h3>
+                        <span class="date">August 2025</span>
+                        <p>August 1 Friday ulet hahaha. Girlfriend day so need i celebrate hahaha</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item right">
+                <div class="timeline-marker"></div>
+                <div class="timeline-content">
+                    <div class="image-container">
+                        <img src="https://images.unsplash.com/photo-1469371670807-013ccf25f16a?w=600&h=400&fit=crop" alt="Spring Renewal" loading="lazy">
+                    </div>
+                    <div class="text-content">
+                        <h3>Surprise Visit sa Bahay</h3>
+                        <span class="date">August 2024</span>
+                        <p>As flowers bloomed again, so did our love. A year of memories behind us, and a lifetime of possibilities ahead.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item left">
+                <div class="timeline-marker"></div>
+                <div class="timeline-content">
+                    <div class="image-container">
+                        <img src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?w=600&h=400&fit=crop" alt="Winter Warmth" loading="lazy">
+                    </div>
+                    <div class="text-content">
+                        <h3>La Sanch Cafe</h3>
+                        <span class="date">August 2025</span>
+                        <p>August 1 Friday ulet hahaha. Girlfriend day so need i celebrate hahaha</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item left">
+                <div class="timeline-marker"></div>
+                <div class="timeline-content">
+                    <div class="image-container">
+                        <img src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?w=600&h=400&fit=crop" alt="Winter Warmth" loading="lazy">
+                    </div>
+                    <div class="text-content">
+                        <h3>Tahanan Cafe</h3>
+                        <span class="date">August 2025</span>
+                        <p>Cozy evenings by the fireplace, sharing stories and dreams. The cold outside only made our hearts grow warmer for each other.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item left multi-image-item">
+                <div class="timeline-marker"></div>
+                <div class="timeline-content">
+                    <div class="multi-image-container" onclick="openGallery(0)">
+                        <div class="main-image">
+                            <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=600&h=400&fit=crop" alt="Summer Vacation" loading="lazy">
+                        </div>
+                        <div class="image-grid">
+                            <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=200&h=150&fit=crop" alt="Beach sunset" loading="lazy">
+                            <img src="https://images.unsplash.com/photo-1519904981063-b0cf448d479e?w=200&h=150&fit=crop" alt="Mountain view" loading="lazy">
+                            <img src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=200&h=150&fit=crop" alt="Lake reflection" loading="lazy">
+                        </div>
+                        <div class="image-overlay">
+                            <span class="image-count">+3 more photos</span>
+                        </div>
+                    </div>
+                    <div class="text-content">
+                        <h3>Camp 10 70</h3>
+                        <span class="date">August 2024</span>
+                        <p>Our very first overnight. </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="future-adventures">
+                <div class="future-marker"></div>
+                <div class="future-content">
+                    <h3>To More Future Gala</h3>
+                    <p>Our story continues to unfold, with countless beautiful moments yet to be written...</p>
+                </div>
+            </div>
+            
+            <div class="letter-container">
+                <div class="letter-envelope" id="letterEnvelope">
+                    <div class="letter-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                            <polyline points="22,6 12,13 2,6"/>
+                        </svg>
+                    </div>
+                    <p class="letter-prompt">Click to open a special message</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal" id="letterModal">
+            <div class="modal-overlay" id="modalOverlay"></div>
+            <div class="modal-content">
+                <button class="close-button" id="closeButton">&times;</button>
+                <div class="letter-paper">
+                    <div class="letter-header">
+                        <h2>Hi Baby</h2>
+                        <span class="letter-date">Today</span>
+                    </div>
+                    <div class="letter-body">
+                        <p>Made this online gallery for us, para anytime we feel nostalgic, isang click lang balik na tayo sa mga alaala.</p>
+                        
+                        <p>Each memory captured in this timeline represents not just a moment in time, but a building block of our incredible journey together. From that first magical meeting to all the adventures that followed, every day with you has been a gift.</p>
+                        
+                        <p>Who would’ve thought, 10 years later… here we are again. Life’s full of surprises, huh?</p>
+
+                        <p>You've brought color to my world, warmth to my heart, and meaning to my days. I can't wait to create countless more memories with you, to see what new chapters our story will hold.</p>
+                        
+                        <p>Thank you for being my partner, my best friend, and my greatest love. Here's to our beautiful past, our wonderful present, and our bright future together.</p>
+                        
+                        <div class="letter-signature">
+                            <p>With all my love,</p>
+                            <p class="signature">Forever Yours Mwamwa♡</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal" id="galleryModal">
+            <div class="modal-overlay" id="galleryOverlay"></div>
+            <div class="gallery-content">
+                <button class="close-button" id="galleryCloseButton">&times;</button>
+                <button class="nav-button prev" id="prevButton">&#8249;</button>
+                <button class="nav-button next" id="nextButton">&#8250;</button>
+                
+                <div class="gallery-image-container">
+                    <img id="galleryImage" src="" alt="">
+                    <div class="gallery-counter">
+                        <span id="currentImageIndex">1</span> / <span id="totalImages">6</span>
+                    </div>
+                </div>
+                
+                <div class="gallery-thumbnails">
+                    <!-- Thumbnails will be dynamically generated -->
+                </div>
             </div>
         </div>
     </div>
+
+    <script>
+        const letterEnvelope = document.getElementById('letterEnvelope');
+        const letterModal = document.getElementById('letterModal');
+        const modalOverlay = document.getElementById('modalOverlay');
+        const closeButton = document.getElementById('closeButton');
+
+        const galleryModal = document.getElementById('galleryModal');
+        const galleryOverlay = document.getElementById('galleryOverlay');
+        const galleryCloseButton = document.getElementById('galleryCloseButton');
+        const galleryImage = document.getElementById('galleryImage');
+        const currentImageIndex = document.getElementById('currentImageIndex');
+        const totalImages = document.getElementById('totalImages');
+        const prevButton = document.getElementById('prevButton');
+        const nextButton = document.getElementById('nextButton');
+
+        const galleryImages = {
+            0: [ // Camp 10 70 - Original gallery
+                {
+                    src: 'https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=800&h=600&fit=crop',
+                    alt: 'Mountain sunrise - The first light of dawn painting the peaks golden'
+                },
+                {
+                    src: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=600&fit=crop',
+                    alt: 'Beach sunset - Watching the sun melt into the ocean horizon'
+                },
+                {
+                    src: 'https://images.unsplash.com/photo-1519904981063-b0cf448d479e?w=800&h=600&fit=crop',
+                    alt: 'Mountain view - Standing together at the summit of our dreams'
+                },
+                {
+                    src: 'https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=800&h=600&fit=crop',
+                    alt: 'Lake reflection - Perfect mirror of clouds and our love'
+                },
+                {
+                    src: 'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&h=600&fit=crop',
+                    alt: 'Forest path - Walking hand in hand through nature\'s cathedral'
+                },
+                {
+                    src: 'https://images.unsplash.com/photo-1518837695005-2083093ee35b?w=800&h=600&fit=crop',
+                    alt: 'Starry night - Making wishes under the infinite sky'
+                }
+            ],
+            1: [ // Where It All Began… Again
+                {
+                    src: 'https://images.unsplash.com/photo-1502736457022-3ad4b43e9312?w=800&h=600&fit=crop',
+                    alt: 'First message - Where it all started again'
+                },
+                {
+                    src: 'https://images.unsplash.com/photo-1518199266791-5375a83190b7?w=800&h=600&fit=crop',
+                    alt: 'Chat screenshot - The question that changed everything'
+                },
+                {
+                    src: 'https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?w=800&h=600&fit=crop',
+                    alt: 'Las Pinas location - Where our story reconnected'
+                }
+            ],
+            2: [ // First Meeting
+                {
+                    src: 'https://images.unsplash.com/photo-1518199266791-5375a83190b7?w=800&h=600&fit=crop',
+                    alt: 'First meeting - Nervous but excited'
+                },
+                {
+                    src: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=600&fit=crop',
+                    alt: 'Meeting place - The spot where we reunited'
+                },
+                {
+                    src: 'https://images.unsplash.com/photo-1469371670807-013ccf25f16a?w=800&h=600&fit=crop',
+                    alt: 'Happy moment - Relief and joy'
+                },
+                {
+                    src: 'https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=800&h=600&fit=crop',
+                    alt: 'Nervous excitement - The butterflies we felt'
+                }
+            ]
+        };
+
+        let currentGallerySet = 0;
+
+        let currentGalleryIndex = 0;
+
+        function openGallery(gallerySetIndex) {
+            currentGallerySet = gallerySetIndex;
+            currentGalleryIndex = 0;
+            updateGalleryThumbnails();
+            showGalleryImage(0);
+            galleryModal.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+            setTimeout(() => {
+                galleryModal.classList.add('show');
+            }, 10);
+        }
+
+        function updateGalleryThumbnails() {
+            const thumbnailContainer = document.querySelector('.gallery-thumbnails');
+            const images = galleryImages[currentGallerySet];
+            totalImages.textContent = images.length;
+            
+            thumbnailContainer.innerHTML = '';
+            images.forEach((img, index) => {
+                const thumbnail = document.createElement('div');
+                thumbnail.className = index === 0 ? 'thumbnail active' : 'thumbnail';
+                thumbnail.onclick = () => showGalleryImage(index);
+                thumbnail.innerHTML = `<img src="${img.src.replace('w=800&h=600', 'w=150&h=100')}" alt="${img.alt}">`;
+                thumbnailContainer.appendChild(thumbnail);
+            });
+        }
+
+        function showGalleryImage(index) {
+            currentGalleryIndex = index;
+            const images = galleryImages[currentGallerySet];
+            const image = images[index];
+            galleryImage.src = image.src;
+            galleryImage.alt = image.alt;
+            currentImageIndex.textContent = index + 1;
+            
+            document.querySelectorAll('.thumbnail').forEach((thumb, i) => {
+                thumb.classList.toggle('active', i === index);
+            });
+        }
+
+        function nextImage() {
+            const images = galleryImages[currentGallerySet];
+            const nextIndex = (currentGalleryIndex + 1) % images.length;
+            showGalleryImage(nextIndex);
+        }
+
+        function prevImage() {
+            const images = galleryImages[currentGallerySet];
+            const prevIndex = (currentGalleryIndex - 1 + images.length) % images.length;
+            showGalleryImage(prevIndex);
+        }
+
+        letterEnvelope.addEventListener('click', function() {
+            letterModal.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+            setTimeout(() => {
+                letterModal.classList.add('show');
+            }, 10);
+        });
+
+        function closeLetterModal() {
+            letterModal.classList.remove('show');
+            setTimeout(() => {
+                letterModal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }, 300);
+        }
+
+        function closeGalleryModal() {
+            galleryModal.classList.remove('show');
+            setTimeout(() => {
+                galleryModal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }, 300);
+        }
+
+        closeButton.addEventListener('click', closeLetterModal);
+        modalOverlay.addEventListener('click', closeLetterModal);
+
+        galleryCloseButton.addEventListener('click', closeGalleryModal);
+        galleryOverlay.addEventListener('click', closeGalleryModal);
+        
+        prevButton.addEventListener('click', prevImage);
+        nextButton.addEventListener('click', nextImage);
+
+        document.addEventListener('keydown', function(e) {
+            if (letterModal.style.display === 'flex') {
+                if (e.key === 'Escape') closeLetterModal();
+            }
+            if (galleryModal.style.display === 'flex') {
+                if (e.key === 'Escape') closeGalleryModal();
+                if (e.key === 'ArrowLeft') prevImage();
+                if (e.key === 'ArrowRight') nextImage();
+            }
+        });
+    </script>
 </body>
 </html>
